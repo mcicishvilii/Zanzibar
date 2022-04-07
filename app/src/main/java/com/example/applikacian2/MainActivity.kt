@@ -57,14 +57,17 @@ class MainActivity : AppCompatActivity() {
 
 
             sumofTwop1 = randomDice1 + randomDice2
-            cumulativeSump1 += sumofTwop1
+
 
             if (randomDice1 == randomDice2){
-                cumulativeSump1 = sumofTwop1
+                sumofTwop1 *= 2
             }
 
-            score.text = "current score of P1 is: $sumofTwop1" // 5
-            scoreBoxP1.text = "score: $cumulativeSump1" // 5
+            cumulativeSump1 += sumofTwop1
+
+
+            score.text = "current score of P1 is: $sumofTwop1"
+            scoreBoxP1.text = "score: $cumulativeSump1"
             turnIndicator.text = "Player 2 turn"
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
@@ -104,12 +107,13 @@ class MainActivity : AppCompatActivity() {
 
 
             sumofTwop2 = randomDice1 + randomDice2
-            cumulativeSump2 += sumofTwop2
+
 
             if (randomDice1 == randomDice2){
                 sumofTwop2 *= 2
-                cumulativeSump2 = sumofTwop2
             }
+            cumulativeSump2 += sumofTwop2
+
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
