@@ -8,10 +8,8 @@ import android.os.Bundle
 import android.widget.*
 import org.w3c.dom.Text
 import kotlin.random.Random
-
+const val WINNING_SCORE  = 111
 class MainActivity : AppCompatActivity() {
-
-
 
 
     @SuppressLint("SetTextI18n")
@@ -52,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             roll2.setBackgroundColor(Color.GREEN)
             roll1.setBackgroundColor(Color.RED)
             roll1.isClickable = false
-            roll2.isClickable = true
+            roll2.isClickable = true //niceeee
 
             val randomDice1 = Random.nextInt(1,7)
             val randomDice2 = Random.nextInt(1,7)
@@ -68,7 +66,8 @@ class MainActivity : AppCompatActivity() {
             cumulativeSump1 += sumofTwop1
 
 
-            score.text = "current score of P1 is: $sumofTwop1"
+            score.text = "current score of P1 is: $sumofTwop1" // სტრინგები ყოველთვის უნდა გვქონდეს რესურსებში ,
+            // რესურსებიდან სტრინგის დათრევა შეგვიძლია getString(R.string.someString) ფუნქციით
             scoreBoxP1.text = "score: $cumulativeSump1"
             turnIndicator.text = "Player 2 turn"
 
@@ -92,8 +91,13 @@ class MainActivity : AppCompatActivity() {
                 5 -> dice2.setImageResource(R.drawable.ic_dice_five)
                 6 -> dice2.setImageResource(R.drawable.ic_dice_six)
             }
+            /* ამდენი when რო არ დაწერო შეგიძლია გააკეთო ერთი ფუქნცია რომელსაც გადასცემ გაგორებულ რიცხვს და ფუნქციაა დაგიბრუნებს
+                სწორ რესურსს, ამ ფუნქციაში მოგიწევს მხოლოდ when ის დაწერაა
+                val  1stDiceImageResource = getCorrectImageResource(randomDice1)
+                და მერე dice1.setImageResource(1stdiceImageResource)
+             */
 
-            if (cumulativeSump1 > 111){
+            if (cumulativeSump1 > WINNING_SCORE){
                 winmessage.text = "Congrats Player1, you won!"
             }
         }
@@ -148,7 +152,7 @@ class MainActivity : AppCompatActivity() {
                 6 -> dice2.setImageResource(R.drawable.ic_dice_six)
             }
 
-            if (cumulativeSump2 > 111){
+            if (cumulativeSump2 > WINNING_SCORE){ //კარგი იქნება რიცხვებიც არ ეწეროს ესე ღიად , შეგიძლია გამოაცხადო კონსტანტა ფაილის გარეთ ჩავანაცვლებ და მიხვდები
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
             }
         }
