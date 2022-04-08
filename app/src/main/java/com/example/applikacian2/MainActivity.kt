@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
 
             roll2.setBackgroundColor(Color.GREEN)
             roll1.setBackgroundColor(Color.RED)
+            roll1.isClickable = false
+            roll2.isClickable = true
 
             val randomDice1 = Random.nextInt(1,7)
             val randomDice2 = Random.nextInt(1,7)
@@ -99,6 +101,9 @@ class MainActivity : AppCompatActivity() {
         roll2.setOnClickListener {
             roll1.setBackgroundColor(Color.GREEN)
             roll2.setBackgroundColor(Color.RED)
+            roll2.isClickable = false
+            roll1.isClickable = true
+
 
 
 
