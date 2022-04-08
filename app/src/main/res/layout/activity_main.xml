@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:textColor="@color/purple_200"
-        app:layout_constraintEnd_toStartOf="@+id/TW_score"
+        android:text="Score:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/TW_Scorebox_player2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TW_player1" />
 
@@ -28,19 +30,20 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TW_score"
+        app:layout_constraintStart_toEndOf="@id/TW_Scorebox_player1"
         app:layout_constraintTop_toBottomOf="@id/TW_player2" />
 
     <TextView
         android:id="@+id/TW_player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 1"
-        android:textSize="25sp"
-        android:textColor="@color/black"
         android:layout_marginTop="20dp"
+        android:text="Player 1"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TW_player2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/TW_score"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -52,20 +55,20 @@
         android:textSize="25sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TW_score"
+        app:layout_constraintStart_toEndOf="@id/TW_player1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TW_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="current score is: Zanzibar"
+        android:text="Please start rolling the dice"
         android:inputType="number"
         android:textColor="@color/purple_200"
-        android:textSize="16sp"
+        android:textSize="30sp"
         android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/BTN_rollP2"
+        app:layout_constraintStart_toEndOf="@id/BTN_rollP1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -85,14 +88,14 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintEnd_toStartOf="@id/IW_second_die"
-        app:layout_constraintStart_toStartOf="@id/TW_score"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TW_score" />
 
     <ImageView
         android:id="@+id/IW_second_die"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:layout_constraintEnd_toEndOf="@id/TW_score"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/IW_first_die"
         app:layout_constraintTop_toBottomOf="@id/TW_score"
         />
@@ -102,23 +105,25 @@
         android:id="@+id/BTN_rollP1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/TW_Scorebox_player1"
-        app:layout_constraintEnd_toStartOf="@id/TW_score"
         android:layout_marginTop="300dp"
         android:text="P1 Roll"
         android:textColor="@color/black"
-        />
+        android:layout_marginStart="10dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TW_score" />
 
     <Button
         android:id="@+id/BTN_rollP2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/TW_Scorebox_player2"
-        app:layout_constraintStart_toEndOf="@id/TW_score"
         android:layout_marginTop="300dp"
         android:text="P2 Roll"
+        android:layout_marginEnd="10dp"
         android:textColor="@color/black"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/TW_score" />
 
     <TextView
         android:id="@+id/TW_winner"
