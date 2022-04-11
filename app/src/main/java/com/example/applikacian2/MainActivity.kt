@@ -56,6 +56,9 @@ class MainActivity : AppCompatActivity() {
             roll1.isClickable = false
             roll2.isClickable = true
 
+            roll1.isClickable = false
+            roll2.isClickable = false
+
 
 
 
@@ -79,6 +82,8 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player1, you won!"
+                roll1.isClickable = false
+                roll2.isClickable = false
 
             }
 
@@ -101,6 +106,8 @@ class MainActivity : AppCompatActivity() {
 
             if (cumulativeSump1 > 111){
                 winmessage.text = "Congrats Player1, you won!"
+                roll1.isClickable = false
+                roll2.isClickable = false
             }
         }
 
@@ -129,12 +136,15 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
+                roll1.isClickable = false
+                roll2.isClickable = false
 
             }
 
             score.text = "current score of P2 is: $sumofTwop2"
             scoreBoxP2.text = "score: $cumulativeSump2"
             turnIndicator.text = "Player 1 turn"
+
 
 
 
