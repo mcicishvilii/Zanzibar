@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
             roll2.isClickable = true
 
 
+
+
             val randomDice1 = Random.nextInt(1,7)
             val randomDice2 = Random.nextInt(1,7)
 
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player1, you won!"
+
             }
 
             when(randomDice1) {
@@ -102,10 +105,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         roll2.setOnClickListener {
-            roll1.setBackgroundColor(Color.GREEN)
             roll2.setBackgroundColor(Color.RED)
+            roll1.setBackgroundColor(Color.GREEN)
             roll2.isClickable = false
             roll1.isClickable = true
+
 
 
 
@@ -125,6 +129,7 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
+
             }
 
             score.text = "current score of P2 is: $sumofTwop2"
@@ -153,6 +158,8 @@ class MainActivity : AppCompatActivity() {
 
             if (cumulativeSump2 > 111){
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
+                roll1.isClickable = false
+                roll2.isClickable = false
             }
         }
     }
