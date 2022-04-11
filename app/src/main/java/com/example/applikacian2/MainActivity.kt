@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         val dice2:ImageView = findViewById(R.id.IW_second_die)
 
 
+
+
         var sumofTwop1:Int
         var cumulativeSump1: Int = 0
 
@@ -53,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             roll1.setBackgroundColor(Color.RED)
             roll1.isClickable = false
             roll2.isClickable = true
+
 
             val randomDice1 = Random.nextInt(1,7)
             val randomDice2 = Random.nextInt(1,7)
