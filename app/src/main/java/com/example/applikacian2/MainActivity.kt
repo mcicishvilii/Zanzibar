@@ -56,8 +56,6 @@ class MainActivity : AppCompatActivity() {
             roll1.isClickable = false
             roll2.isClickable = true
 
-            roll1.isClickable = false
-            roll2.isClickable = false
 
 
 
