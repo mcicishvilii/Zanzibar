@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         val dice2:ImageView = findViewById(R.id.IW_second_die)
 
 
+
+
         var sumofTwop1:Int
         var cumulativeSump1: Int = 0
 
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
             roll1.setBackgroundColor(Color.RED)
             roll1.isClickable = false
             roll2.isClickable = true //niceeee
+
+
+
+
 
             val randomDice1 = Random.nextInt(1,7)
             val randomDice2 = Random.nextInt(1,7)
@@ -73,6 +79,9 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player1, you won!"
+                roll1.isClickable = false
+                roll2.isClickable = false
+
             }
 
             when(randomDice1) {
@@ -99,14 +108,17 @@ class MainActivity : AppCompatActivity() {
 
             if (cumulativeSump1 > WINNING_SCORE){
                 winmessage.text = "Congrats Player1, you won!"
+                roll1.isClickable = false
+                roll2.isClickable = false
             }
         }
 
         roll2.setOnClickListener {
-            roll1.setBackgroundColor(Color.GREEN)
             roll2.setBackgroundColor(Color.RED)
+            roll1.setBackgroundColor(Color.GREEN)
             roll2.isClickable = false
             roll1.isClickable = true
+
 
 
 
@@ -126,11 +138,15 @@ class MainActivity : AppCompatActivity() {
 
             if ((randomDice1 == 5 && randomDice2 == 6) || (randomDice1 == 6 && randomDice2 == 5) ){
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
+                roll1.isClickable = false
+                roll2.isClickable = false
+
             }
 
             score.text = "current score of P2 is: $sumofTwop2"
             scoreBoxP2.text = "score: $cumulativeSump2"
             turnIndicator.text = "Player 1 turn"
+
 
 
 
@@ -154,6 +170,8 @@ class MainActivity : AppCompatActivity() {
 
             if (cumulativeSump2 > WINNING_SCORE){ //კარგი იქნება რიცხვებიც არ ეწეროს ესე ღიად , შეგიძლია გამოაცხადო კონსტანტა ფაილის გარეთ ჩავანაცვლებ და მიხვდები
                 winmessage.text = "Congrats Player2, you won pa zanzibarski!"
+                roll1.isClickable = false
+                roll2.isClickable = false
             }
         }
     }
